@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-up</title>
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #ccc;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .popup.visible {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="myPopup" class="popup">
+        <h2>¡Bienvenido!</h2>
+        <p>Este es un mensaje pop-up.</p>
+        <button onclick="closePopup()">Cerrar</button>
+    </div>
+    <script>
+        function showPopup() {
+            document.getElementById('myPopup').classList.add('visible');
+        }
+
+        function closePopup() {
+            document.getElementById('myPopup').classList.remove('visible');
+        }
+
+        window.onload = function() {
+            setTimeout(showPopup, 3000); // Mostrar el pop-up después de 3 segundos
+        }
+    </script>
+</body>
+</html>
